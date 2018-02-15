@@ -54,7 +54,7 @@ module.exports = io => {
       }
 
       // Add the user to the players
-      req.game.players.push({ userId, pairs: [] })
+      req.game.players = [...req.game.players,{ userId, pairs: [] }]
 
       req.game.save()
         .then((game) => {
